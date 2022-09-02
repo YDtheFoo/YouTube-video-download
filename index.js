@@ -9,12 +9,13 @@ app.use(cors());
 app.get('/youtube-video-download', (req, res) => {
   const url = req.query.url;
   if(url){
+    console.log(process.env.RAPIDAPI);
     const options = {
         method: 'GET',
         url: 'https://youtube-search-and-download.p.rapidapi.com/video',
         params: {id: url},
         headers: {
-            'X-RapidAPI-Key': process.env.RAPIDAPI,
+            'X-RapidAPI-Key': `${process.env.RAPIDAPI}`,
             'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
         }
     };
