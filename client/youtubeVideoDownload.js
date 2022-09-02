@@ -23,11 +23,15 @@ window.onload = () => {
 }
 
 function youtube_parser(url){
+    if(url.length == 11){
+        return url;
+    }
     var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
     var match = url.match(regExp);
     return (match&&match[7].length==11)? match[7] : false;
 }
 function generateDom(data){
+    console.log(data);
 
 	const container = document.createElement("div");
     container.style.width = "100%";

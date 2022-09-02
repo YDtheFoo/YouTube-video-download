@@ -14,7 +14,7 @@ app.get('/youtube-video-download', (req, res) => {
         url: 'https://youtube-search-and-download.p.rapidapi.com/video',
         params: {id: url},
         headers: {
-            'X-RapidAPI-Key': process.env.youtubeDownloadAPIKey,
+            'X-RapidAPI-Key': process.env.RAPIDAPI,
             'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
         }
     };
